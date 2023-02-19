@@ -9,5 +9,8 @@
                 "varsIgnorePattern": "^_"
             }
         ]
-    }
+    },
+
+"react/display-name": ["displayName" , { "ignoreTranspilerName": true }]
+
 }
