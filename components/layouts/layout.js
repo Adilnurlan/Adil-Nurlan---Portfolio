@@ -8,6 +8,7 @@ const Layout = ({ children, router }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Adil Nurlan - Homepage</title>
+        <link rel="shortcut icon" href="/favicon.png" />
       </Head>
       <Navbar path={router.asPath} />
       <Container maxW="container.md" pt={14}>

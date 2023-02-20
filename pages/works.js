@@ -10,21 +10,19 @@ import Motion from '../components/layouts/article';
 const Works = () => {
   return (
     <Motion>
-      <Container>
+      <Container maxW="container.sm" mt={5}>
         <Heading as="h3" fontSize={20} mb={4}>
           Works
         </Heading>
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section delay={0.3}>
             <WorkGridItem
-              id="trentmovies"
+              id="trendmovies"
               title="Trend Movies"
               thumbnail={thumbTrendMovies}
             >
               A website for choosing a movie. A one-page website using the React
-              Router routing module. Build a project on Git Hub, check for build
-              errors, and live page performance. [HTML, CSS, JS, REACT,
-              REACT-ROUTER]
+              Router routing module.
             </WorkGridItem>
           </Section>
           <Section delay={0.3}>
@@ -34,7 +32,7 @@ const Works = () => {
               thumbnail={thumbPhonebook}
             >
               A contact app for saving your contacts. For react components there
-              was used MUl Material library. [HTML, CSS, JS, REACT, REDUX].
+              was used MUl Material library.
             </WorkGridItem>
           </Section>
           <Section delay={0.3}>
@@ -43,8 +41,7 @@ const Works = () => {
               title="Ice Cream"
               thumbnail={thumbIceCream}
             >
-              A website with a responsive layout. Build a project on Git Hub,
-              check for build errors, and live page performance.
+              Commercial website for the sale of ice cream.
             </WorkGridItem>
           </Section>
           <Section delay={0.3}>
@@ -54,8 +51,7 @@ const Works = () => {
               thumbnail={thumbFilmoteka}
             >
               The application for searching movies and creating your own movie
-              library. I did Iogic for pagination. We used here a library called
-              tui-pagination. [HTML, SCSS, JS]
+              library.
             </WorkGridItem>
           </Section>
         </SimpleGrid>

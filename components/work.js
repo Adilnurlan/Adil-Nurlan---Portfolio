@@ -6,22 +6,25 @@ export const Title = ({ children }) => {
   return (
     <Box>
       <Link as={NextLink} href="/works">
-        <Link>Works</Link>
+        Works
       </Link>
       <span>
-        <Heading display="inline-block" as="h3" fontSize={20} mb={4}>
-          {children}
-        </Heading>
+        &nbsp;
+        <ChevronRightIcon />
+        &nbsp;
       </span>
+      <Heading display="inline-block" as="h3" fontSize={20} mb={4}>
+        {children}
+      </Heading>
     </Box>
   );
 };
 
 export const WorkImage = ({ src, alt }) => {
-  return <Image borderRadius={lg} w="full" src={src} alt={alt} mb={4} />;
+  return <Image borderRadius="lg" w="full" src={src} alt={alt} mb={4} />;
 };
 
-export const Meta = () => {
+export const Meta = ({ children }) => {
   return (
     <Badge colorScheme="green" mr={2}>
       {children}
