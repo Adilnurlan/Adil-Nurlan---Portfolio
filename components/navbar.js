@@ -77,7 +77,7 @@ const Navbar = props => {
             Works
           </LinkItem>
           <Link
-            href="https://github.com/Adilnurlan/my-portfolio"
+            href="https://github.com/Adilnurlan/Adil-Nurlan---Portfolio/tree/master"
             target="_blank"
           >
             <Icon as={IoLogoGithub} /> Source code
@@ -102,7 +102,7 @@ const Navbar = props => {
                 </MenuItem>
                 <MenuItem>
                   <Link
-                    href="https://github.com/Adilnurlan/my-portfolio"
+                    href="https://github.com/Adilnurlan/Adil-Nurlan---Portfolio/tree/master"
                     target="_blank"
                   >
                     View source

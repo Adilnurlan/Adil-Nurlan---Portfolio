@@ -66,7 +66,7 @@ const Page = () => {
               maxWidth="100px"
               display="inline-block"
               borderRadius="10px"
-              src="/images/ava.jpg"
+              src="/images/ava.JPG"
               alt="avatar"
             />
           </Box>
