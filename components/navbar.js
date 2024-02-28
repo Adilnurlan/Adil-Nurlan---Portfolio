@@ -1,6 +1,8 @@
 import Logo from './logo';
 import { forwardRef } from 'react';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import {
   Container,
   Box,
@@ -13,7 +15,8 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  Button
 } from '@chakra-ui/react';
 import { HamburgerIcon, Icon } from '@chakra-ui/icons';
 import ThemeToggleBtn from './theme-toggle-btn';
@@ -40,7 +43,20 @@ const MenuLink = forwardRef((props, ref) => (
 ));
 
 const Navbar = props => {
+  const router = useRouter();
+  const { t, i18n } = useTranslation('common');
   const { path } = props;
+
+  const lngs = {
+    en: { nativeName: 'English' },
+    ru: { nativeName: 'Russian' }
+  };
+
+  const onToggleLanguageClick = newLocale => {
+    const { pathname, asPath, query } = router;
+    router.push({ pathname, query }, asPath, { locale: newLocale });
+    t('change-locale', newLocale);
+  };
 
   return (
     <Box
@@ -74,14 +90,25 @@ const Navbar = props => {
           mt={{ base: 4, md: 0 }}
         >
           <LinkItem href="/works" path={path}>
-            Works
+            {t('header.nav-name-1')}
           </LinkItem>
           <Link
             href="https://github.com/Adilnurlan/Adil-Nurlan---Portfolio/tree/master"
             target="_blank"
           >
-            <Icon as={IoLogoGithub} /> Source code
+            <Icon as={IoLogoGithub} /> {t('header.nav-name-2')}{' '}
           </Link>
+          {Object.keys(lngs).map(lng => (
+            <Button
+              type="submit"
+              key={lng}
+              // href={`/${lng}`}
+              onClick={() => onToggleLanguageClick(lng)}
+              disabled={i18n.resolvedLanguage === lng}
+            >
+              {lng}
+            </Button>
+          ))}
         </Stack>
         <Box flex={1} align="right">
           <ThemeToggleBtn />
@@ -95,17 +122,17 @@ const Navbar = props => {
               />
               <MenuList>
                 <MenuItem as={MenuLink} href="/">
-                  About
+                  {t('section-1.title')}
                 </MenuItem>
                 <MenuItem as={MenuLink} href="/works">
-                  Works
+                  {t('header.nav-name-1')}
                 </MenuItem>
                 <MenuItem>
                   <Link
                     href="https://github.com/Adilnurlan/Adil-Nurlan---Portfolio/tree/master"
                     target="_blank"
                   >
-                    View source
+                    {t('header.nav-name-2')}
                   </Link>
                 </MenuItem>
               </MenuList>

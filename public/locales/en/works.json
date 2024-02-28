@@ -1,0 +1,19 @@
+{
+  "title": "Works",
+  "work-1": {
+    "title": "Trend Movies",
+    "description": "A website for choosing a movie. A one-page website using the React Router routing module."
+  },
+  "work-2": {
+    "title": "Phonebook",
+    "description": "A contact app for saving your contacts. For react components there was used MUl Material library."
+  },
+  "work-3": {
+    "title": "Ice Cream",
+    "description": "Commercial website for the sale of ice cream."
+  },
+  "work-4": {
+    "title": "Filmoteka",
+    "description": "The application for searching movies and creating your own movie library."
+  }
+}

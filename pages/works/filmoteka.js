@@ -3,39 +3,38 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Title, WorkImage, Meta } from '../../components/work';
 import Paragraph from '../../components/paragraph';
 import Motion from '../../components/layouts/article';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 const Work = () => {
+  const { t } = useTranslation('filmoteka');
   return (
     <Motion title="Filmoteka">
       <Container maxW="container.sm" mt={5}>
         <Title>
-          Filmoteka <Badge>2022</Badge>
+          {t('title')} <Badge>2022</Badge>
         </Title>
-        <Paragraph>
-          Application for choosing a movie to watch later. It was a team
-          project. My role: Developer. I specifically did a pagination logic.
-          Check out the app below.
-        </Paragraph>
+        <Paragraph>{t('description')}</Paragraph>
         <List ml={4} my={4}>
           <ListItem>
-            <Meta>Website</Meta>
+            <Meta>{t('link-title-1')}</Meta>
             <Link href="https://polonkoev.github.io/filmoteka/" target="_blank">
-              Visit site
+              {t('link-title-1-name')}
               <ExternalLinkIcon mx="3px" />
             </Link>
           </ListItem>
           <ListItem>
-            <Meta>Source code</Meta>
+            <Meta>{t('link-title-2')}</Meta>
             <Link
               href="https://github.com/Polonkoev/filmoteka/tree/main/src"
               target="_blank"
             >
-              Visit GitHub page
+              {t('link-title-2-name')}
               <ExternalLinkIcon mx="3px" />
             </Link>
           </ListItem>
           <ListItem>
-            <Meta>Stack</Meta>
+            <Meta>{t('link-title-3')}</Meta>
             <span>HTML, CSS, Vanille JavaScript, REST API, AJAX, Parcel</span>
           </ListItem>
         </List>
@@ -45,5 +44,17 @@ const Work = () => {
     </Motion>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        'common',
+        'filmoteka',
+        'works'
+      ]))
+    }
+  };
+}
 
 export default Work;

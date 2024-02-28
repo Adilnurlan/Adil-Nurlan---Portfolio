@@ -21,8 +21,11 @@ import {
   IoLogoDiscord
 } from 'react-icons/io5';
 import { Highlight } from '@chakra-ui/react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 const Page = () => {
+  const { t } = useTranslation('common');
   return (
     <Motion>
       <Container maxW="container.sm">
@@ -38,20 +41,15 @@ const Page = () => {
             query="― Steve Jobs"
             styles={{ px: '2', py: '1', rounded: 'full', bg: 'teal.100' }}
           >
-            "Your time is limited, so don&apos;t waste it living someone
-            else&apos;s life. Don&apos;t be trapped by dogma — which is living
-            with the results of other people&apos;s thinking. And most
-            important, have the courage to follow your heart and intuition. They
-            somehow already know what you truly want to become. Everything else
-            is secondary." ― Steve Jobs
+            {t('quote')}
           </Highlight>
         </Box>
         <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
-              Nurlan Adil
+              {t('my-info.name')}
             </Heading>
-            <p>Developer (Javascript | React | Next)</p>
+            <p>{t('my-info.myposition')}</p>
           </Box>
           <Box
             flexShrink={0}
@@ -73,18 +71,9 @@ const Page = () => {
         </Box>
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            About me
+            {t('section-1.title')}
           </Heading>
-          <Paragraph>
-            A recent graduate in IT programming from the GoIT school seeking to
-            apply for a position as a front-end developer. I have sound
-            knowledge of HTML, CSS, JavaScript, and React. Also, I have hands-on
-            experience in following Agile/Scrum methodology when working in a
-            team. I am a fast learner, responsible, and ready for challenging
-            tasks. I believe that my technical skills and knowledge of
-            JavaScript, React, Redux, HTML and CSS will render me a valuable
-            addition to your team.
-          </Paragraph>
+          <Paragraph>{t('section-1.description')}</Paragraph>
           <Box align="center" my={4}>
             <Link href="/works">
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
@@ -95,41 +84,38 @@ const Page = () => {
         </Section>
         <Section delay={0.2}>
           <Heading as="h3" variant="section-title">
-            Bio
+            {t('section-2.title')}
           </Heading>
           <BioSection>
             <BioYear>1998</BioYear>
-            Born in Kyzylorda (K-orda), Kazakhstan.
+            {t('section-2.bio-description.1998')}
           </BioSection>
           <BioSection>
             <BioYear>2015</BioYear>
-            Graduated from a local school.
+            {t('section-2.bio-description.2015')}
           </BioSection>
           <BioSection>
             <BioYear>2019</BioYear>
-            Graduated from K. Satpayev KazNITU University with a degree in
-            technical engineering.
+            {t('section-2.bio-description.2019')}
           </BioSection>
           <BioSection>
             <BioYear>2022</BioYear>
-            Graduated from an online IT programming school.
+            {t('section-2.bio-description.2022')}
           </BioSection>
           <BioSection>
-            <BioYear>2022 to present</BioYear>
-            Working as a freelancer
+            <BioYear>2022 {t('section-2.bio-description.present')}</BioYear>
+            {t('section-2.bio-description.2022-to-present')}
           </BioSection>
         </Section>
         <Section delay={0.2}>
           <Heading as="h3" variant="section-title">
-            I like
+            {t('section-3.title')}
           </Heading>
-          <Paragraph>
-            Music, Playing video-games, Coding, Learning new
-          </Paragraph>
+          <Paragraph>{t('section-3.description')}</Paragraph>
         </Section>
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            Social links
+            {t('section-4.title')}
           </Heading>
           <List>
             <ListItem>
@@ -175,5 +161,13 @@ const Page = () => {
     </Motion>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, 'common'))
+    }
+  };
+}
 
 export default Page;

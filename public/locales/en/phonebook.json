@@ -1,0 +1,9 @@
+{
+  "title": "Phonebook",
+  "description": "A contact app for saving your contacts. For react components there was used MUl Material library.",
+  "link-title-1": "Website",
+  "link-title-1-name": "Visit site",
+  "link-title-2": "Source code",
+  "link-title-2-name": "Visit GitHub page",
+  "link-title-3": "Stack"
+}

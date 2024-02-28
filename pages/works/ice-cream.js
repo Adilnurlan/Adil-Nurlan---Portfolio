@@ -3,42 +3,41 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Title, WorkImage, Meta } from '../../components/work';
 import Paragraph from '../../components/paragraph';
 import Motion from '../../components/layouts/article';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 const Work = () => {
+  const { t } = useTranslation('iceCream');
   return (
     <Motion title="Ice cream">
       <Container maxW="container.sm" mt={5}>
         <Title>
-          Ice-cream <Badge>2022</Badge>
+          {t('title')} <Badge>2022</Badge>
         </Title>
-        <Paragraph>
-          Commercial website for the sale of ice cream. Also the website with an
-          adaptive layout. It was a team project. My role: Developer. This site
-          entirely made with HTML and CSS.
-        </Paragraph>
+        <Paragraph>{t('description')}</Paragraph>
         <List ml={4} my={4}>
           <ListItem>
-            <Meta>Website</Meta>
+            <Meta>{t('link-title-1')}</Meta>
             <Link
               href="https://makoto-kino14.github.io/ice-cream-html-css-project2/"
               target="_blank"
             >
-              Visit site
+              {t('link-title-1-name')}
               <ExternalLinkIcon mx="3px" />
             </Link>
           </ListItem>
           <ListItem>
-            <Meta>Source code</Meta>
+            <Meta>{t('link-title-2')}</Meta>
             <Link
               href="https://github.com/Makoto-kino14/ice-cream-html-css-project2"
               target="_blank"
             >
-              Visit GitHub page
+              {t('link-title-2-name')}
               <ExternalLinkIcon mx="3px" />
             </Link>
           </ListItem>
           <ListItem>
-            <Meta>Stack</Meta>
+            <Meta>{t('link-title-3')}</Meta>
             <span>HTML, CSS, SaSS</span>
           </ListItem>
         </List>
@@ -48,5 +47,13 @@ const Work = () => {
     </Motion>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common', 'iceCream', 'works']))
+    }
+  };
+}
 
 export default Work;

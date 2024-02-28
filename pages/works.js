@@ -6,52 +6,52 @@ import thumbPhonebook from '../public/images/phonebook.png';
 import thumbIceCream from '../public/images/ice-cream.png';
 import thumbFilmoteka from '../public/images/filmoteka.png';
 import Motion from '../components/layouts/article';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 const Works = () => {
+  const { t } = useTranslation('works');
   return (
     <Motion>
       <Container maxW="container.sm" mt={5}>
         <Heading as="h3" fontSize={20} mb={4}>
-          Works
+          {t('title')}
         </Heading>
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section delay={0.3}>
             <WorkGridItem
               id="trendmovies"
-              title="Trend Movies"
+              title={t('work-1.title')}
               thumbnail={thumbTrendMovies}
             >
-              A website for choosing a movie. A one-page website using the React
-              Router routing module.
+              {t('work-1.description')}
             </WorkGridItem>
           </Section>
           <Section delay={0.3}>
             <WorkGridItem
               id="phonebook"
-              title="Phonebook"
+              title={t('work-2.title')}
               thumbnail={thumbPhonebook}
             >
-              A contact app for saving your contacts. For react components there
-              was used MUl Material library.
+              {t('work-2.description')}
             </WorkGridItem>
           </Section>
           <Section delay={0.3}>
             <WorkGridItem
               id="ice-cream"
-              title="Ice Cream"
+              title={t('work-3.title')}
               thumbnail={thumbIceCream}
             >
-              Commercial website for the sale of ice cream.
+              {t('work-3.description')}
             </WorkGridItem>
           </Section>
           <Section delay={0.3}>
             <WorkGridItem
               id="filmoteka"
-              title="Filmoteka"
+              title={t('work-4.title')}
               thumbnail={thumbFilmoteka}
             >
-              The application for searching movies and creating your own movie
-              library.
+              {t('work-4.description')}
             </WorkGridItem>
           </Section>
         </SimpleGrid>
@@ -59,5 +59,13 @@ const Works = () => {
     </Motion>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common', 'works']))
+    }
+  };
+}
 
 export default Works;

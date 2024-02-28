@@ -1,12 +1,14 @@
 import NextLink from 'next/link';
 import { Heading, Box, Image, Link, Badge } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
+import { useTranslation } from 'next-i18next';
 
 export const Title = ({ children }) => {
+  const { t } = useTranslation('works');
   return (
     <Box>
       <Link as={NextLink} href="/works">
-        Works
+        {t('title')}
       </Link>
       <span>
         &nbsp;
