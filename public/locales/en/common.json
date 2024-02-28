@@ -11,7 +11,7 @@
   },
   "section-1": {
     "title": "About me",
-    "description": "A recent graduate in IT programming from the GoIT school seeking to apply for a position as a front-end developer. I have sound knowledge of HTML, CSS, JavaScript, and React. Also, I have hands-on experience in following Agile/Scrum methodology when working in a team. I am a fast learner, responsible, and ready for challenging tasks. I believe that my technical skills and knowledge of JavaScript, React, Redux, HTML and CSS will render me a valuable addition to your team."
+    "description": "I am a front-end developer with a year of practical experience. My experience includes working with HTML, CSS, JavaScript, React, Vue. Over the past year, I have been involved in the development of several projects, which has allowed me to dive deeper into these technologies and enhance my skills. I remain responsible and ready to tackle challenging tasks. I aspire to further growth and development in the field of front-end development, and I'm confident that my experience and skills can bring valuable contributions to your team."
   },
   "section-2": {
     "title": "Bio",
@@ -20,7 +20,8 @@
       "2015": "Graduated from a local school.",
       "2019": "Graduated from K. Satpayev KazNITU University with a degree in technical engineering.",
       "2022": "Graduated from an online IT programming school.",
-      "2022-to-present": "Working as a freelancer",
+      "2023": "Freelance",
+      "2023-to-present": "Front-end developer",
       "present": "to present"
     }
   },

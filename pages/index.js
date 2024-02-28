@@ -103,8 +103,12 @@ const Page = () => {
             {t('section-2.bio-description.2022')}
           </BioSection>
           <BioSection>
-            <BioYear>2022 {t('section-2.bio-description.present')}</BioYear>
-            {t('section-2.bio-description.2022-to-present')}
+            <BioYear>2023</BioYear>
+            {t('section-2.bio-description.2023')}
+          </BioSection>
+          <BioSection>
+            <BioYear>2023 {t('section-2.bio-description.present')}</BioYear>
+            {t('section-2.bio-description.2023-to-present')}
           </BioSection>
         </Section>
         <Section delay={0.2}>
