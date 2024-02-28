@@ -29,7 +29,7 @@ const Page = () => {
   return (
     <Motion>
       <Container maxW="container.sm">
-        <Box
+        {/* <Box
           borderRadius="lg"
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
           p={3}
@@ -43,7 +43,7 @@ const Page = () => {
           >
             {t('quote')}
           </Highlight>
-        </Box>
+        </Box> */}
         <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">

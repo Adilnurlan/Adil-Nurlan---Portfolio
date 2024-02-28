@@ -5,6 +5,7 @@ import thumbTrendMovies from '../public/images/trend-movies.png';
 import thumbPhonebook from '../public/images/phonebook.png';
 import thumbIceCream from '../public/images/ice-cream.png';
 import thumbFilmoteka from '../public/images/filmoteka.png';
+import thumbGallery from '../public/images/gallery-main.png';
 import Motion from '../components/layouts/article';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -27,7 +28,7 @@ const Works = () => {
               {t('work-1.description')}
             </WorkGridItem>
           </Section>
-          <Section delay={0.3}>
+          {/* <Section delay={0.3}>
             <WorkGridItem
               id="phonebook"
               title={t('work-2.title')}
@@ -35,7 +36,7 @@ const Works = () => {
             >
               {t('work-2.description')}
             </WorkGridItem>
-          </Section>
+          </Section> */}
           <Section delay={0.3}>
             <WorkGridItem
               id="ice-cream"
@@ -52,6 +53,15 @@ const Works = () => {
               thumbnail={thumbFilmoteka}
             >
               {t('work-4.description')}
+            </WorkGridItem>
+          </Section>
+          <Section delay={0.3}>
+            <WorkGridItem
+              id="gallery"
+              title={t('work-5.title')}
+              thumbnail={thumbGallery}
+            >
+              {t('work-5.description')}
             </WorkGridItem>
           </Section>
         </SimpleGrid>

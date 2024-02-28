@@ -19,7 +19,7 @@ const Work = () => {
           <ListItem>
             <Meta>{t('link-title-1')}</Meta>
             <Link
-              href="https://makoto-kino14.github.io/ice-cream-html-css-project2/"
+              href="https://adilnurlan.github.io/ice-cream-project/"
               target="_blank"
             >
               {t('link-title-1-name')}
@@ -29,7 +29,7 @@ const Work = () => {
           <ListItem>
             <Meta>{t('link-title-2')}</Meta>
             <Link
-              href="https://github.com/Makoto-kino14/ice-cream-html-css-project2"
+              href="https://github.com/Adilnurlan/ice-cream-project"
               target="_blank"
             >
               {t('link-title-2-name')}

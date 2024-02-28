@@ -15,5 +15,9 @@
   "work-4": {
     "title": "Filmoteka",
     "description": "The application for searching movies and creating your own movie library."
+  },
+  "work-5": {
+    "title": "Gallery",
+    "description": "Gallery is an online platform for art lovers where you can enjoy beautiful pictures of various genres and eras."
   }
 }
