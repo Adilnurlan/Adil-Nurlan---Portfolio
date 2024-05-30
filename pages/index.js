@@ -51,7 +51,7 @@ const Page = () => {
             </Heading>
             <p>{t('my-info.myposition')}</p>
           </Box>
-          <Box
+          {/* <Box
             flexShrink={0}
             mt={{ base: 4, md: 0 }}
             ml={{ md: 6 }}
@@ -67,7 +67,7 @@ const Page = () => {
               src="/images/ava.JPG"
               alt="avatar"
             />
-          </Box>
+          </Box> */}
         </Box>
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
