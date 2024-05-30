@@ -91,10 +91,6 @@ const Page = () => {
             {t('section-2.bio-description.1998')}
           </BioSection>
           <BioSection>
-            <BioYear>2015</BioYear>
-            {t('section-2.bio-description.2015')}
-          </BioSection>
-          <BioSection>
             <BioYear>2019</BioYear>
             {t('section-2.bio-description.2019')}
           </BioSection>
@@ -136,19 +132,6 @@ const Page = () => {
               >
                 <Button variant="ghost" leftIcon={<Icon as={IoLogoLinkedin} />}>
                   LinkedIn
-                </Button>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href="https://instagram.com/adil.nurlan?igshid=NDk5N2NlZjQ="
-                target="_blank"
-              >
-                <Button
-                  variant="ghost"
-                  leftIcon={<Icon as={IoLogoInstagram} />}
-                >
-                  Instagram
                 </Button>
               </Link>
             </ListItem>
